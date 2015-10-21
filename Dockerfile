@@ -11,4 +11,4 @@ ENV PATH=/usr/src/rumprun-hw/app-tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:
 RUN printf "RUMPRUN_TOOLCHAIN_TUPLE=x86_64-rumprun-netbsd" > config.mk
 RUN make world
 
-RUN for f in */bin/*; do [ -x $f ] && rumpbake hw_generic $f.hw_generic $f && rumpbake hw_virtio $f.hw_virtio $f; done
+RUN for f in */bin/*; do [ -x $f ] && rumpbake hw_generic $f.hw_generic $f; rumpbake hw_virtio $f.hw_virtio $f; done
