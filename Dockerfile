@@ -12,6 +12,8 @@ RUN printf "RUMPRUN_TOOLCHAIN_TUPLE=x86_64-rumprun-netbsd" > config.mk
 
 # not building
 RUN rm -rf nodejs
+# very slow
+RUN rm -rf rust
 
 RUN make world
 
