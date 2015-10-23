@@ -10,8 +10,6 @@ ENV PATH=/usr/src/rumprun-hw/app-tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:
 
 RUN printf "RUMPRUN_TOOLCHAIN_TUPLE=x86_64-rumprun-netbsd" > config.mk
 
-# not building
-RUN rm -rf nodejs
 # very slow
 RUN rm -rf rust
 
