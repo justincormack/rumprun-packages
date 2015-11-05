@@ -12,7 +12,7 @@ RUN printf "RUMPRUN_TOOLCHAIN_TUPLE=x86_64-rumprun-netbsd" > config.mk
 RUN rm -rf rust
 
 RUN cd nginx && make && cd ..
-RUN for f in */bin/*; do [ -x $f ] && rumpbake xen-pv $f.xen $f; done
+RUN for f in */bin/*; do [ -x $f ] && rumpbake xen_pv $f.xen_pv $f; done
 
 # qemu, kvm
 COPY . /usr/src/rumprun-packages-hw
